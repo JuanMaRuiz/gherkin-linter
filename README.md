@@ -1,21 +1,21 @@
 # Gherkin lint
-[![Travis](https://img.shields.io/travis/vsiakka/gherkin-lint.svg?maxAge=2592000)](https://travis-ci.org/vsiakka/gherkin-lint/)
-[![David](https://img.shields.io/david/vsiakka/gherkin-lint.svg?maxAge=2592000)](https://david-dm.org/vsiakka/gherkin-lint)
-[![David](https://img.shields.io/david/dev/vsiakka/gherkin-lint.svg?maxAge=2592000)](https://david-dm.org/vsiakka/gherkin-lint#info=devDependencies&view=table)
-[![npm](https://img.shields.io/npm/v/gherkin-lint.svg?maxAge=2592000)](https://www.npmjs.com/package/gherkin-lint)
+[![Travis](https://img.shields.io/travis/juanmaruiz/gherkin-linter.svg?maxAge=2592000)](https://travis-ci.org/juanmaruiz/gherkin-linter/)
+[![David](https://img.shields.io/david/juanmaruiz/gherkin-linter.svg?maxAge=2592000)](https://david-dm.org/juanmaruiz/gherkin-linter)
+[![David](https://img.shields.io/david/dev/juanmaruiz/gherkin-linter.svg?maxAge=2592000)](https://david-dm.org/juanmaruiz/gherkin-linter#info=devDependencies&view=table)
+[![npm](https://img.shields.io/npm/v/gherkin-linter.svg?maxAge=2592000)](https://www.npmjs.com/package/gherkin-linter)
 
-Uses [Gherkin](https://github.com/cucumber/gherkin-javascript) to parse feature files and runs linting against the default rules, and the optional rules you specified in your `.gherkin-lintrc` file.
+Uses [Gherkin](https://github.com/cucumber/gherkin-javascript) to parse feature files and runs linting against the default rules, and the optional rules you specified in your `.gherkin-linterrc` file.
 
 ## Installation
 ```
-npm install gherkin-lint
+npm install gherkin-linter
 
 ```
 
 ## Demo
 To see the output for all the errors that the linter can detect run:
 ```
-git clone https://github.com/vsiakka/gherkin-lint.git
+git clone https://github.com/juanmaruiz/gherkin-linter.git
 npm run demo
 ```
 Or check this:
@@ -152,16 +152,16 @@ The default is 70 characters for each of these:
 ```
 
 ## Configuration File
-The default name for the configuration file is `.gherkin-lintrc` and it's expected to be in your working directory.
+The default name for the configuration file is `.gherkin-linterrc` and it's expected to be in your working directory.
 
-If you are using a file with a different name or a file in a different folder, you will need to specify the `-c` or `--config` option and pass in the relative path to your configuration file. Eg: `gherkin-lint -c path/to/configuration/file.extention`
+If you are using a file with a different name or a file in a different folder, you will need to specify the `-c` or `--config` option and pass in the relative path to your configuration file. Eg: `gherkin-linter -c path/to/configuration/file.extention`
 
-You can find an example configuration file, that turns on all of the rules in the root of this repo (.gherkin-lintrc).
+You can find an example configuration file, that turns on all of the rules in the root of this repo (.gherkin-linterrc).
 
 ## Ignoring Feature Files
 There are 2 ways you can specify files that the linter should ignore:
-1. Add a `.gherkin-lintignore` file in your working directory and specify one glob pattern per file line
-1. Use the command line option`-i` or `--ignore`,  pass in a comma separated list of glob patterns. If specified, the command line option will override the `.gherkin-lintignore` file.
+1. Add a `.gherkin-linterignore` file in your working directory and specify one glob pattern per file line
+1. Use the command line option`-i` or `--ignore`,  pass in a comma separated list of glob patterns. If specified, the command line option will override the `.gherkin-linterignore` file.
 
 
 ## Custom rules
@@ -169,7 +169,7 @@ You can specify one more more custom rules directories by using the `-r` or `--r
 
 Example:
 ```
-gherkin-lint --rulesdir "/path/to/my/rulesdir" --rulesdir "from/cwd/rulesdir"
+gherkin-linter --rulesdir "/path/to/my/rulesdir" --rulesdir "from/cwd/rulesdir"
 ```
 
 Paths can either be absolute or relative to the current working directory.
