@@ -27,6 +27,12 @@
     "space-before-blocks": [
       "error",
       "always"
+    ],
+    "no-console": [
+      "error",
+      {
+        "allow": ["error", "log", "warn"]
+      }
     ]
   }
 }

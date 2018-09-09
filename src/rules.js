@@ -1,13 +1,13 @@
 // Operations on rules
-
-var fs = require('fs');
-var path = require('path');
+const fs = require('fs');
+const path = require('path');
 
 function getAllRules(additionalRulesDirs) {
-  var rules = {};
-  var rulesDirs = [
+  const rules = {};
+  const rulesDirs = [
     path.join(__dirname, 'rules')
   ].concat(additionalRulesDirs || []);
+
   rulesDirs.forEach(function(rulesDir) {
     rulesDir = path.resolve(rulesDir);
     fs.readdirSync(rulesDir).forEach(function(file) {
@@ -26,6 +26,14 @@ function doesRuleExist(rule, additionalRulesDirs) {
   return getRule(rule, additionalRulesDirs) !== undefined;
 }
 
+/**
+ * Checks if a rule is enabled "on". Rules are configured in this way:
+ *  Case 1: "rule1" : "on",
+ *  Case 2: "rule2" : ["on", {"element": ["first_element"]}]
+ *
+ * @param {String|Array} ruleConfig
+ * @returns {Boolean} - Returns a boolean, true if the rule is configured
+ */
 function isRuleEnabled(ruleConfig) {
   if (Array.isArray(ruleConfig)) {
     return ruleConfig[0] === 'on';

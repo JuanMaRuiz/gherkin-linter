@@ -1,5 +1,3 @@
-/*eslint no-console: "off"*/
-
 var style = {
   gray: function(text) {
     return '\x1b[38;5;243m' + text + '\x1b[0m';

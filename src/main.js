@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-
 var program = require('commander');
 var linter = require('./linter.js');
 var featureFinder = require('./feature-finder.js');
