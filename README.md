@@ -1,5 +1,5 @@
 # Gherkin lint
-[![Build Status](https://travis-ci.org/JuanMaRuiz/gherkin-linter.svg?branch=master)](https://travis-ci.org/JuanMaRuiz/gherkin-linter)
+[![Build Status](https://travis-ci.org/JuanMaRuiz/gherkin-linter.svg?branch=feature-unit-tests)](https://travis-ci.org/JuanMaRuiz/gherkin-linter)
 [![David](https://img.shields.io/david/juanmaruiz/gherkin-linter.svg?maxAge=2592000)](https://david-dm.org/juanmaruiz/gherkin-linter)
 [![David](https://img.shields.io/david/dev/juanmaruiz/gherkin-linter.svg?maxAge=2592000)](https://david-dm.org/juanmaruiz/gherkin-linter#info=devDependencies&view=table)
 [![npm](https://img.shields.io/npm/v/gherkin-linter.svg?maxAge=2592000)](https://www.npmjs.com/package/gherkin-linter)
