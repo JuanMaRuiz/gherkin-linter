@@ -27,7 +27,7 @@ function doesRuleExist(rule, additionalRulesDirs) {
 }
 
 /**
- * Checks if a rule is enabled "on". Rules are configured in this way:
+ * Checks if a rule is enabled. A rule is enabled when the first value is "on". Rules are configured in this way:
  *  Case 1: "rule1" : "on",
  *  Case 2: "rule2" : ["on", {"element": ["first_element"]}]
  *
@@ -35,7 +35,7 @@ function doesRuleExist(rule, additionalRulesDirs) {
  * @returns {Boolean} - Returns a boolean, true if the rule is configured
  */
 function isRuleEnabled(ruleConfig) {
-  const ruleConfiguration = Array.isArray(ruleConfig) ? ruleConfig[0] : ruleConfig;
+  let ruleConfiguration = Array.isArray(ruleConfig) ? ruleConfig[0] : ruleConfig;
   return ruleConfiguration === 'on';
 }
 
