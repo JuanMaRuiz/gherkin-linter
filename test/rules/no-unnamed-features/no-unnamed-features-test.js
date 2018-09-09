@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 var Gherkin = require('gherkin');
 var parser = new Gherkin.Parser();
-const no_unnamed_feature = require('../../../dist/rules/no-unnamed-features');
+const no_unnamed_feature = require('./../../../src/rules/no-unnamed-features');
 
 describe('No unnamed features rule', function () {
 

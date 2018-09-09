@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 var Gherkin = require('gherkin');
 var parser = new Gherkin.Parser();
-const no_unnamed_scenario = require('../../../dist/rules/no-unnamed-scenarios');
+const no_unnamed_scenario = require('./../../../src/rules/no-unnamed-scenarios');
 
 describe('No unnamed scecnarios rule', function () {
 
