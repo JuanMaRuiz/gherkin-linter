@@ -1,13 +1,16 @@
-var rule = 'no-unnamed-scenarios';
+const RULE = 'no-unnamed-scenarios';
 
 function noUnNamedScenarios(feature) {
+
   if (feature.children) {
     var errors = [];
     feature.children.forEach(function(scenario) {
       if (!scenario.name && scenario.type === 'Scenario') {
-        errors.push({message: 'Missing Scenario name',
-          rule   : rule,
-          line   : scenario.location.line});
+        errors.push({
+          message: 'Missing Scenario name',
+          rule   : RULE,
+          line   : scenario.location.line
+        });
       }
     });
     return errors;
@@ -15,6 +18,6 @@ function noUnNamedScenarios(feature) {
 }
 
 module.exports = {
-  name: rule,
+  name: RULE,
   run: noUnNamedScenarios
 };

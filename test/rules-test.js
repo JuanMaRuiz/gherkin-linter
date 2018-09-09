@@ -1,5 +1,5 @@
 const assert = require('chai').assert;
-const rules = require('../src/rules');
+const rules = require('../dist/rules');
 
 describe('Rules operations in ', function() {
   describe('isRuleEnabled method in rules file', function () {
