@@ -2,6 +2,7 @@
 [![Build Status](https://travis-ci.org/JuanMaRuiz/gherkin-linter.svg?branch=feature-unit-tests)](https://travis-ci.org/JuanMaRuiz/gherkin-linter)
 [![David](https://img.shields.io/david/juanmaruiz/gherkin-linter.svg?maxAge=2592000)](https://david-dm.org/juanmaruiz/gherkin-linter)
 [![David](https://img.shields.io/david/dev/juanmaruiz/gherkin-linter.svg?maxAge=2592000)](https://david-dm.org/juanmaruiz/gherkin-linter#info=devDependencies&view=table)
+[![codecov](https://codecov.io/gh/JuanMaRuiz/gherkin-linter/branch/master/graph/badge.svg)](https://codecov.io/gh/JuanMaRuiz/gherkin-linter)
 
 Uses [Gherkin](https://github.com/cucumber/gherkin-javascript) to parse feature files and runs linting against the default rules, and the optional rules you specified in your `.gherkin-linterrc` file.
 
