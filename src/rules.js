@@ -35,16 +35,15 @@ function doesRuleExist(rule, additionalRulesDirs) {
  * @returns {Boolean} - Returns a boolean, true if the rule is configured
  */
 function isRuleEnabled(ruleConfig) {
-  if (Array.isArray(ruleConfig)) {
-    return ruleConfig[0] === 'on';
-  }
-  return ruleConfig === 'on';
+  const ruleConfiguration = Array.isArray(ruleConfig) ? ruleConfig[0] : ruleConfig;
+  return ruleConfiguration === 'on';
 }
 
 function runAllEnabledRules(feature, file, configuration, additionalRulesDirs) {
   var errors = [];
   var ignoreFutureErrors = false;
   var rules = getAllRules(additionalRulesDirs);
+
   Object.keys(rules).forEach(function(ruleName) {
     var rule = rules[ruleName];
     if (isRuleEnabled(configuration[rule.name]) && !ignoreFutureErrors) {
