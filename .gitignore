@@ -5,6 +5,7 @@ npm-debug.log
 .DS_Store
 .nyc_output/
 coverage
+.idea/
 .vscode/
 .nyc_output
 coverage
