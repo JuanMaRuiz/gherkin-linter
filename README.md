@@ -6,6 +6,13 @@
 
 Uses [Gherkin](https://github.com/cucumber/gherkin-javascript) to parse feature files and runs linting against the default rules, and the optional rules you specified in your `.gherkin-lintrc` file.
 
+# Important info about this repo
+
+The official npm package is [gherkin-linter](https://github.com/vsiakka/gherkin-lint/) and all the information you can found in this repo, included installation, refers to the official package.
+
+I have cloned the original repo and created with other name only for fun. I have some new ideas and I would like to make some refactor, use new es6 features, modify unit tests and add more test to the original code. I have done some PR to the original repository anyway.
+
+[@vsiakka](https://github.com/vsiakka/) has done a very good job creating this gherkin linter tool but I know that is very hard to maintain without help.  
 ## Installation
 ```
 npm install gherkin-linter
