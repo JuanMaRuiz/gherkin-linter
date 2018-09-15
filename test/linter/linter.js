@@ -17,7 +17,7 @@ describe('Linter', function() {
     var actual = linter.lint(['test/linter/TagOnBackground.feature']);
     var expected = [{
       'line': '4',
-      'message': 'Tags on Backgrounds are dissallowed',
+      'message': 'Tags on Backgrounds are disallowed',
       'rule': 'no-tags-on-backgrounds'
     }];
     assert.lengthOf(actual, 1);
@@ -39,7 +39,7 @@ describe('Linter', function() {
     var actual = linter.lint(['test/linter/MultilineStep.feature']);
     var expected = [{
       'line': '9',
-      'message': 'Steps should begin with "Given", "When", "Then", "And" or "But". Multiline steps are dissallowed',
+      'message': 'Steps should begin with "Given", "When", "Then", "And" or "But". Multiline steps are disallowed',
       'rule': 'no-multiline-steps'
     }];
     assert.lengthOf(actual, 1);
@@ -50,7 +50,7 @@ describe('Linter', function() {
     var actual = linter.lint(['test/linter/MultilineBackgroundStep.feature']);
     var expected = [{
       'line': '5',
-      'message': 'Steps should begin with "Given", "When", "Then", "And" or "But". Multiline steps are dissallowed',
+      'message': 'Steps should begin with "Given", "When", "Then", "And" or "But". Multiline steps are disallowed',
       'rule': 'no-multiline-steps'
     }];
     assert.lengthOf(actual, 1);
@@ -61,7 +61,7 @@ describe('Linter', function() {
     var actual = linter.lint(['test/linter/MultilineScenarioOutlineStep.feature']);
     var expected = [{
       'line': '9',
-      'message': 'Steps should begin with "Given", "When", "Then", "And" or "But". Multiline steps are dissallowed',
+      'message': 'Steps should begin with "Given", "When", "Then", "And" or "But". Multiline steps are disallowed',
       'rule': 'no-multiline-steps'
     }];
     assert.lengthOf(actual, 1);

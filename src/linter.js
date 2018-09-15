@@ -1,20 +1,20 @@
-var fs = require('fs');
-var _ = require('lodash');
-var Gherkin = require('gherkin');
-var parser = new Gherkin.Parser();
-var rules = require('./rules.js');
+const fs = require('fs');
+const _ = require('lodash');
+const Gherkin = require('gherkin');
+const parser = new Gherkin.Parser();
+const rules = require('./rules.js');
 
 function lint(files, configuration, additionalRulesDirs) {
-  var output = [];
+  let output = [];
 
   files.forEach(function(fileName) {
-    var fileContent = fs.readFileSync(fileName, 'utf-8');
-    var file = {
+    let errors = [];
+    const fileContent = fs.readFileSync(fileName, 'utf-8');
+    const file = {
       name: fileName,
       lines: fileContent.split(/\r\n|\r|\n/)
     };
 
-    var errors = [];
     try {
       var feature = parser.parse(fileContent).feature || {};
       errors = rules.runAllEnabledRules(feature, file, configuration, additionalRulesDirs);
@@ -25,8 +25,11 @@ function lint(files, configuration, additionalRulesDirs) {
         throw e;
       }
     }
-    var fileBlob = {filePath: fs.realpathSync(fileName), errors: _.sortBy(errors, 'line')};
-    output.push(fileBlob);
+
+    output.push({
+      filePath: fs.realpathSync(fileName),
+      errors: _.sortBy(errors, 'line')
+    });
   });
 
   return output;
@@ -52,7 +55,7 @@ function getFormatedTaggedBackgroundError(errors) {
       errors[1].message.indexOf('expected: #TagLine, #ScenarioLine, #ScenarioOutlineLine, #Comment, #Empty') > -1) {
 
     errorMsgs.push({
-      message: 'Tags on Backgrounds are dissallowed',
+      message: 'Tags on Backgrounds are disallowed',
       rule: 'no-tags-on-backgrounds',
       line: errors[0].message.match(/\((\d+):.*/)[1]
     });
@@ -66,7 +69,10 @@ function getFormatedTaggedBackgroundError(errors) {
       }
     }
   }
-  return {errors: errors.slice(index, errors.length), errorMsgs: errorMsgs};
+  return {
+    errors: errors.slice(index, errors.length),
+    errorMsgs: errorMsgs
+  };
 }
 
 function getFormattedFatalError(error) {
@@ -84,7 +90,7 @@ function getFormattedFatalError(error) {
     rule = 'no-examples-in-scenarios';
   } else if (error.message.indexOf('expected: #EOF, #TableRow, #DocStringSeparator, #StepLine, #TagLine, #ScenarioLine, #ScenarioOutlineLine, #Comment, #Empty, got') > -1 ||
              error.message.indexOf('expected: #EOF, #TableRow, #DocStringSeparator, #StepLine, #TagLine, #ExamplesLine, #ScenarioLine, #ScenarioOutlineLine, #Comment, #Empty, got') > -1) {
-    errorMsg = 'Steps should begin with "Given", "When", "Then", "And" or "But". Multiline steps are dissallowed';
+    errorMsg = 'Steps should begin with "Given", "When", "Then", "And" or "But". Multiline steps are disallowed';
     rule = 'no-multiline-steps';
 
   } else {
