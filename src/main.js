@@ -1,9 +1,9 @@
 #!/usr/bin/env node
-var program = require('commander');
-var linter = require('./linter.js');
-var featureFinder = require('./feature-finder.js');
-var configParser = require('./config-parser.js');
-var logger = require('./logger.js');
+const program = require('commander');
+const linter = require('./linter.js');
+const featureFinder = require('./feature-finder.js');
+const configParser = require('./config-parser.js');
+const logger = require('./logger.js');
 
 function list(val) {
   return val.split(',');
@@ -31,7 +31,7 @@ process.exit(getExitCode(results));
 
 function getExitCode(results) {
   var exitCode = 0;
-  results.forEach(function(result) {
+  results.forEach(result  => {
     if (result.errors.length > 0) {
       exitCode = 1;
     }
