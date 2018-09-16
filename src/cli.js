@@ -27,5 +27,5 @@ function collect(val, memo) {
   return memo;
 }
 
-lint.printResults(results, program.format);
+lint.output(results, program.format);
 process.exit(lint.getExitCode(results));
