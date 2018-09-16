@@ -63,6 +63,6 @@ function getIgnorePatterns(ignoreArg) {
 }
 
 module.exports = {
-  getFeatureFiles: getFeatureFiles,
-  defaultIgnoreFileName: defaultIgnoreFileName
+  getFeatureFiles,
+  defaultIgnoreFileName
 };

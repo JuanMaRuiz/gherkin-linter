@@ -42,7 +42,7 @@ function processFatalErrors(errors) {
     errors = result.errors;
     errorMsgs = result.errorMsgs;
   }
-  errors.forEach(function(error) {
+  errors.forEach( (error) => {
     errorMsgs.push(getFormattedFatalError(error));
   });
   return errorMsgs;
@@ -97,9 +97,11 @@ function getFormattedFatalError(error) {
     errorMsg = error.message;
     rule = 'unexpected-error';
   }
-  return {message: errorMsg,
+  return {
+    message: errorMsg,
     rule   : rule,
-    line   : errorLine};
+    line   : errorLine
+  };
 }
 
 module.exports = {
